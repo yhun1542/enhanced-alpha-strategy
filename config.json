@@ -1,0 +1,50 @@
+{
+  "_comment": "API keys should be set via environment variables for security",
+  "_usage": "export POLYGON_API_KEY='your_key' && python enhanced_alpha_strategy_production.py",
+  
+  "api_keys": {
+    "polygon": "",
+    "sharadar": ""
+  },
+  
+  "universe": {
+    "tech_stocks": ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA"],
+    "market_etf": "SPY"
+  },
+  
+  "backtest": {
+    "start_date": "2015-01-01",
+    "end_date": "2024-12-31",
+    "rebalance_freq": "W",
+    "transaction_cost_bps": 23,
+    "risk_free_rate": 0.02
+  },
+  
+  "strategy": {
+    "target_vol": 0.14,
+    "macro_lookback": 252,
+    "smoothing_factor": 0.5,
+    "no_trade_band": 0.0
+  },
+  
+  "alpha_weights": {
+    "drawdown_recovery": 0.50,
+    "price_acceleration": 0.30,
+    "vol_adj_momentum": 0.20
+  },
+  
+  "regime_exposure": {
+    "BULL": 1.0,
+    "NEUTRAL": 0.65,
+    "BEAR": 0.25
+  },
+  
+  "drawdown_protection": {
+    "threshold_severe": -0.15,
+    "threshold_moderate": -0.10,
+    "threshold_mild": -0.05,
+    "exposure_severe": 0.2,
+    "exposure_moderate": 0.4,
+    "exposure_mild": 0.7
+  }
+}
